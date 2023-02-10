@@ -1,3 +1,6 @@
+# maps file
+**/*.map
+
 # Logs
 logs
 *.log
