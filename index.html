@@ -11,15 +11,14 @@
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
 
     <title>My Space - Ranu Yulianto</title>
 </head>
 
 <body>
     <div class="banner-container">
-        <div class="banner-image">
-            <img src="images/desktop.svg" alt="">
-        </div>
+        <div id="banner-image" style="width: 300px; height: 300px;"></div>
         <div class="banner-text">
             <div class="banner-name">
                 Hi, I am <span class="name">Ranu Yulianto</span>
@@ -40,15 +39,58 @@
     </div>
 </body>
 <script>
-    var tl = gsap.timeline({repeat: -1, repeatDelay: 1})
-    tl.to('.banner-image > img', { rotation: 10, duration: 0.15 })
-    tl.to('.banner-image > img', { rotation: 0, duration: 0.15 })
-    tl.to('.banner-image > img', { rotation: 10, duration: 0.15 })
-    tl.to('.banner-image > img', { rotation: 0, duration: 0.15 })
-    tl.to('.banner-image > img', { rotation: 10, duration: 0.15 })
-    tl.to('.banner-image > img', { rotation: 0, duration: 0.15 })
-    tl.to('.banner-image > img', { rotation: 10, duration: 0.15 })
-    tl.to('.banner-image > img', { rotation: 0, duration: 0.15 })
+    var chartDom = document.getElementById('banner-image');
+    var myChart = echarts.init(chartDom);
+    var option;
+    data = [20, 20, 20, 20, 20];
+
+    option = {
+        series: [
+            {
+                type: 'pie',
+                radius: '50%',
+                center: ['50%', '70%'],
+                itemStyle: { borderRadius: 3 },
+                label: { show: false },
+                data: data,
+                universalTransition: {
+                    enabled: true
+                }
+            }
+        ]
+    };
+    // myChart.setOption(option)
+
+
+    function animate() {
+        option.series[0].radius = '50%'
+        option.series[0].data = data
+        option.series[0].roseType = false
+        option.series[0].center = ['50%', '70%']
+        myChart.setOption(option, true);
+        setTimeout(() => {
+            option.series[0].radius = 125
+            option.series[0].center = ['50%', '50%']
+            myChart.setOption(option, true)
+            setTimeout(() => {
+                option.series[0].data = [40, 28, 32, 10, 50]
+                myChart.setOption(option, true)
+                setTimeout(() => {
+                    option.series[0].radius = [50, 125]
+                    myChart.setOption(option, true)
+                    setTimeout(() => {
+                        option.series[0].roseType = 'area'
+                        myChart.setOption(option, true)
+                        setTimeout(() => {
+                            animate()
+                        }, 2000)
+                    }, 2000)
+                }, 2000)
+            }, 2000)
+        }, 2000)
+    }
+
+    animate();
 </script>
 
 </html>
