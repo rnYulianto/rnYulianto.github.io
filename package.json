@@ -1,0 +1,28 @@
+{
+  "name": "rnyulianto.github.io",
+  "version": "1.0.0",
+  "description": "Personal Website",
+  "main": "index.html",
+  "scripts": {
+    "build:css": "postcss src/style.css --dir assets/css/",
+    "watch:css": "postcss src/style.css --dir assets/css/ -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnYulianto/rnYulianto.github.io.git"
+  },
+  "author": "Ranu Yulianto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rnYulianto/rnYulianto.github.io/issues"
+  },
+  "homepage": "https://github.com/rnYulianto/rnYulianto.github.io#readme",
+  "devDependencies": {
+    "cssnano": "^7.0.6",
+    "parcel": "^2.13.2",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "postcss-preset-env": "^10.1.1"
+  }
+}

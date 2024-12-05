@@ -1,0 +1,57 @@
+/* @import url('normalize.css'); */
+
+:root {
+  --primaryColor: #222831;
+  --secondaryColor: #31363F;
+  --highlightColor: #76ABAE;
+  --lightColor: #EEEEEE;
+
+  --buttondRound: .5em;
+  --buttonPadding: 1em;
+}
+
+body {
+  background-color: var(--primaryColor);
+  color: var(--lightColor);
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+a {
+  color: var(--lightColor);
+  text-decoration: none;
+  &.nav-item {
+    padding: var(--buttonPadding);
+    border-radius: var(--buttondRound);
+    &:hover {
+      background-color: var(--secondaryColor);
+      color: var(--highlightColor);
+    }
+  }
+}
+
+#main-body {
+  width: 90%;
+  display: flex;
+  justify-self: center;
+}
+
+#main-nav {
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  h1 {
+    font-family: "Jockey One", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+}
+
+#main-menu {
+  display: flex;
+  list-style: none;
+  column-gap: 10px;
+  align-items: center;
+}
+
