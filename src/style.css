@@ -42,7 +42,7 @@ a {
 #main-body {
   /* width: 80%; */
   display: grid;
-  justify-self: center;
+  /*justify-self: center;*/
 }
 
 #main-nav {
@@ -151,6 +151,7 @@ a {
 
   .greeting-wrapper {
     width: 800px;
+
     h1 {
       margin: 0;
       font-family: Birthstone, serif;
